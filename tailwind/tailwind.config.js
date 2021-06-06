@@ -12,6 +12,34 @@ module.exports = {
         '2xl': '6rem',
       },
     },
+    colors: {
+      yellow: {
+        light: '#F8CA80',
+        DEFAULT: '#F5B956',
+        dark: '#EB960E'
+      },
+      purple: {
+        light: '#9C7BC8',
+        DEFAULT: '#7B4FB6',
+        dark: '#5C3A8A'
+      },
+      black: {
+        DEFAULT: '#282829'
+      },
+      white: {
+        DEFAULT: '#F2F3F8'
+      },
+      grey: {
+        light: '#ABABAB',
+        DEFAULT: '#8F8F8F',
+        dark: '#6B6B6B'
+      }
+    },
+    fontFamily: {
+      'sans': ['PTSans', 'ui-sans-serif', 'system-ui'],
+      'display': ['Augor'],
+      'body': ['PTSans']
+    },
     extend: {},
   },
   variants: {
