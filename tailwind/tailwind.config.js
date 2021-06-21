@@ -1,5 +1,8 @@
 module.exports = {
-  purge: [],
+  mode: 'jit',
+  purge: [
+    '../*.html',
+  ],
   darkMode: false, // or 'media' or 'class'
   theme: {
     container: {
@@ -8,8 +11,8 @@ module.exports = {
         DEFAULT: '1rem',
         sm: '2rem',
         lg: '4rem',
-        xl: '5rem',
-        '2xl': '6rem',
+        xl: '7rem',
+        '2xl': '8rem',
       },
     },
     colors: {
