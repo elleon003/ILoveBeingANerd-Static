@@ -1,18 +1,18 @@
 <?php get_header(); ?>
 
         <header>
-            <nav class="bg-purple flex flex-col h-full lg:fixed lg:left-0 lg:top-0 lg:w-64 lg:z-10 overflow-x-hidden pb-4 pt-16 text-center text-white">
-                <div class="flex items-center justify-between lg:p-0 pb-8 px-4">
+            <nav class="bg-purple flex flex-col h-full overflow-x-hidden py-4 text-center text-white lg:fixed lg:left-0 lg:pb-4 lg:pt-16 lg:top-0 lg:w-64 lg:z-10">
+                <div class="flex items-center justify-between px-4 lg:p-0">
                     <a href="https://ilovebeinganerd.com" class="text-left lg:text-center"> <h1><?php bloginfo( 'name' ); ?></h1> </a>
                     <button aria-expanded="false" aria-label="Open the menu" aria-controls="menu" class="lg:hidden">
                         <i id="toggle" class='fas fa-bars fa-2x pt-3 pl-3'></i>
                     </button>
                 </div>
-                <div id="menu" class="duration-700 ease-in-out pt-4 lg:flex lg:flex-col" hidden>
-                    <a href="" class="bg-black duration-300 ease-in focus:bg-yellow focus:text-black font-bold hover:bg-yellow hover:no-underline hover:text-black mx-auto px-6 py-2 rounded-md text-lg text-white lg:w-1/2"><?php _e( 'Subscribe', 'ilovebeinganerd' ); ?></a>
+                <div id="menu" class="duration-700 ease-in-out pt-8 lg:flex lg:flex-col" hidden>
+                    <a href="" class="bg-black duration-300 ease-in font-bold hover:bg-yellow hover:no-underline hover:text-black mx-auto px-6 py-2 rounded-md text-lg text-white lg:w-1/2"><?php _e( 'Subscribe', 'ilovebeinganerd' ); ?></a>
                     <?php if ( has_nav_menu( 'primary' ) ) : ?>
                         <?php
-                            PG_Smart_Walker_Nav_Menu::$options['template'] = '<a class="block border-grey duration-700 ease-in-out focus:underline hover:bg-yellow hover:font-semibold hover:text-black py-5 text-2xl w-full lg:border-t-2 {CLASSES}" id="{ID}" {ATTRS}>{TITLE}</a>';
+                            PG_Smart_Walker_Nav_Menu::$options['template'] = '<a class="block border-grey duration-700 ease-in-out focus:underline hover:bg-yellow hover:font-semibold hover:text-black hover:text-bold py-5 text-2xl w-full lg:border-t-2 {CLASSES}" id="{ID}" {ATTRS}>{TITLE}</a>';
                             PG_Smart_Walker_Nav_Menu::$options['current_class'] = 'active';
                             wp_nav_menu( array(
                             	'container' => '',
@@ -35,7 +35,7 @@
                 </div>
                 <!-- start slipsum code -->
                 <div class="flex justify-start items-center text-base"> 
-                    <p class="mr-2 text-base font-medium">  </p>                                           
+                    <p class="mr-2 text-base font-medium"> </p> 
                 </div>
                 <div>
                     <?php the_content(); ?>

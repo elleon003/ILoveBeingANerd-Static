@@ -68,19 +68,20 @@
   p {
     @apply text-xl leading-snug my-4;
   }
+  main a,
+  li a {
+    @apply underline hover:text-purple-light hover:font-bold;
+  }
 }
 
 @layer components {
   .btn {
-    @apply bg-yellow hover:bg-yellow-dark hover:underline focus:bg-yellow-dark font-bold px-6 py-2 rounded-md text-lg text-black transition duration-300 ease-in-out; 
+    @apply bg-yellow no-underline hover:bg-yellow-dark hover:underline focus:bg-yellow-dark font-bold px-6 py-2 rounded-md text-lg text-black hover:text-black transition duration-300 ease-in-out; 
   }
   .link {
     @apply text-purple-light hover:text-purple hover:underline focus:text-purple focus:underline;
   }
   .active {
     @apply bg-yellow font-semibold text-black;
-  }
-  .page {
-    max-width: 1080px;
   }
 }

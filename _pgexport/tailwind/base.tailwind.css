@@ -68,6 +68,9 @@
   p {
     @apply text-xl leading-snug my-4;
   }
+  main a {
+    @apply text-purple-light hover:font-bold;
+  }
 }
 
 @layer components {

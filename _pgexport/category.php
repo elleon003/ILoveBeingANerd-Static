@@ -1,4 +1,4 @@
-<?php get_header(); ?>
+<?php get_header( 'category' ); ?>
 
 <header>
     <nav class="bg-purple flex flex-col h-full overflow-x-hidden py-4 text-center text-white lg:fixed lg:left-0 lg:pb-4 lg:pt-16 lg:top-0 lg:w-64 lg:z-10">
@@ -28,8 +28,8 @@
     <div class="bg-black pt-8 px-4 relative sm:px-6 lg:px-8 lg:py-16">
         <div class="relative max-w-7xl mx-auto">
             <div class="text-center">
-                <h2 class="font-bold text-3xl tracking-tight sm:text-4xl"><?php _e( 'Latest Posts', 'ilovebeinganerd' ); ?></h2>
-                <p class="mt-3 max-w-2xl mx-auto text-xl sm:mt-4"><?php _e( 'Make sure you subscribe to keep up with the nerdery!', 'ilovebeinganerd' ); ?></p>
+                <h2 class="font-bold text-3xl tracking-tight sm:text-4xl"><?php echo single_cat_title(); ?></h2>
+                <p class="mt-3 max-w-2xl mx-auto text-xl sm:mt-4"><?php _e( 'Latest posts on', 'ilovebeinganerd' ); ?> <span><?php echo single_cat_title(); ?></span></p>
             </div>
             <?php if ( have_posts() ) : ?>
                 <div class="gap-5 grid max-w-lg mt-12 mx-auto lg:grid-cols-2 lg:max-w-none xl:grid-cols-3">
@@ -215,4 +215,4 @@
     <a href="<?php echo esc_url( get_page_link( PG_Helper::getPostFromSlug( 'privacy-policy', 'page' ) ) ); ?>" class="font-semibold hover:underline py-2 lg:p-0"><?php _e( 'Privacy Policy', 'ilovebeinganerd' ); ?></a>
 </footer>        
 
-<?php get_footer(); ?>
+<?php get_footer( 'category' ); ?>
