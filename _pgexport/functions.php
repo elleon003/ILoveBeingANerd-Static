@@ -140,6 +140,58 @@ function ilovebeinganerd_customize_register( $wp_customize ) {
 
     /* Pinegrow generated Customizer Controls Begin */
 
+    $wp_customize->add_section( 'homepage_content', array(
+		'title' => __( 'Homepage Content', 'ilovebeinganerd' )
+	));
+    $pgwp_sanitize = function_exists('pgwp_sanitize_placeholder') ? 'pgwp_sanitize_placeholder' : null;
+
+    $wp_customize->add_setting( 'homepage_content_Subscribe Button', array(
+		'type' => 'theme_mod',
+		'default' => __( 'Subscribe', 'ilovebeinganerd' ),
+		'sanitize_callback' => $pgwp_sanitize
+	));
+
+    $wp_customize->add_control( 'homepage_content_Subscribe Button', array(
+		'label' => __( 'Subscribe Button', 'ilovebeinganerd' ),
+		'type' => 'text',
+		'section' => 'homepage_content'
+	));
+
+    $wp_customize->add_setting( 'homepage_content_Subscribe Button Link', array(
+		'type' => 'theme_mod',
+		'sanitize_callback' => $pgwp_sanitize
+	));
+
+    $wp_customize->add_control( 'homepage_content_Subscribe Button Link', array(
+		'label' => __( 'Subscribe Button Link', 'ilovebeinganerd' ),
+		'type' => 'url',
+		'section' => 'homepage_content'
+	));
+
+    $wp_customize->add_setting( 'homepage_content_Headline', array(
+		'type' => 'theme_mod',
+		'default' => __( 'Latest Posts', 'ilovebeinganerd' ),
+		'sanitize_callback' => $pgwp_sanitize
+	));
+
+    $wp_customize->add_control( 'homepage_content_Headline', array(
+		'label' => __( 'Headline', 'ilovebeinganerd' ),
+		'type' => 'text',
+		'section' => 'homepage_content'
+	));
+
+    $wp_customize->add_setting( 'homepage_content_Subheadline', array(
+		'type' => 'theme_mod',
+		'default' => 'Make sure you <a href="/subscribe">subscribe </a>to keep up with the nerdery!',
+		'sanitize_callback' => $pgwp_sanitize
+	));
+
+    $wp_customize->add_control( 'homepage_content_Subheadline', array(
+		'label' => __( 'Subheadline', 'ilovebeinganerd' ),
+		'type' => 'text',
+		'section' => 'homepage_content'
+	));
+
     /* Pinegrow generated Customizer Controls End */
 
 }

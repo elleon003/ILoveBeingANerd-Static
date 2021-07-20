@@ -9,11 +9,11 @@
             </button>
         </div>
         <div id="menu" class="duration-700 ease-in-out pt-8 lg:flex lg:flex-col" hidden>
-            <a href="" class="bg-black duration-300 ease-in font-bold hover:bg-yellow hover:no-underline hover:text-black mx-auto px-6 py-2 rounded-md text-lg text-white lg:w-1/2"><?php _e( 'Subscribe', 'ilovebeinganerd' ); ?></a>
+            <a href="<?php echo get_theme_mod( 'homepage_content_Subscribe Button Link', '/subscribe' ); ?>" class="bg-black duration-300 ease-in font-bold hover:bg-yellow hover:no-underline hover:text-black mx-auto px-6 py-2 rounded-md text-lg text-white lg:w-1/2"><?php echo get_theme_mod( 'homepage_content_Subscribe Button', __( 'Subscribe', 'ilovebeinganerd' ) ); ?></a>
             <?php if ( has_nav_menu( 'primary' ) ) : ?>
                 <?php
                     PG_Smart_Walker_Nav_Menu::$options['template'] = '<a class="block border-grey duration-700 ease-in-out focus:underline hover:bg-yellow hover:font-semibold hover:text-black hover:text-bold py-5 text-2xl w-full lg:border-t-2 {CLASSES}" id="{ID}" {ATTRS}>{TITLE}</a>';
-                    PG_Smart_Walker_Nav_Menu::$options['current_class'] = 'active';
+                    PG_Smart_Walker_Nav_Menu::$options['current_class'] = 'current-menu-item';
                     wp_nav_menu( array(
                     	'container' => '',
                     	'theme_location' => 'primary',
@@ -28,8 +28,8 @@
     <div class="bg-black pt-8 px-4 relative sm:px-6 lg:px-8 lg:py-16">
         <div class="relative max-w-7xl mx-auto">
             <div class="text-center">
-                <h2 class="font-bold text-3xl tracking-tight sm:text-4xl"><?php _e( 'Latest Posts', 'ilovebeinganerd' ); ?></h2>
-                <p class="mt-3 max-w-2xl mx-auto text-xl sm:mt-4"><?php _e( 'Make sure you subscribe to keep up with the nerdery!', 'ilovebeinganerd' ); ?></p>
+                <h2 class="font-bold text-3xl tracking-tight sm:text-4xl"><?php echo get_theme_mod( 'homepage_content_Headline', __( 'Latest Posts', 'ilovebeinganerd' ) ); ?></h2>
+                <p class="mt-3 max-w-2xl mx-auto text-xl sm:mt-4"><?php echo get_theme_mod( 'homepage_content_Subheadline', 'Make sure you <a href="/subscribe">subscribe </a>to keep up with the nerdery!' ); ?></p>
             </div>
             <?php if ( have_posts() ) : ?>
                 <div class="gap-5 grid max-w-lg mt-12 mx-auto lg:grid-cols-2 lg:max-w-none xl:grid-cols-3">
@@ -51,8 +51,6 @@
                                     <time datetime="2020-03-16">
                                         <?php the_time( get_option( 'date_format' ) ); ?>
                                     </time>
-                                    <span aria-hidden="true">
-		&middot; </span>
                                 </div>
                                 <div class="flex-1">
                                     <p class="mt-3 text-base text-gray-500"><?php echo get_the_excerpt(); ?></p>
@@ -61,131 +59,6 @@
                             </div>
                         </div>
                     <?php endwhile; ?>
-                    <div class="blog-shadow duration-700 ease-in-out flex flex-col overflow-hidden rounded-lg lg:hover:scale-105">
-                        <div class="flex-shrink-0">
-                            <?php echo PG_Image::getPostImage( null, 'post-thumbnail', array(
-                                	'class' => 'h-48 w-full object-cover',
-                                	'sizes' => 'max-width(480px) 90vw, max-width(768px) 512px, max-width(1024px) 52vw, max-width(1280px) 36vw, max-width(1536px) 25vw, 413px'
-                            ), 'both', null ) ?>
-                        </div>
-                        <div class="flex-1 p-6 flex flex-col justify-between">
-                            <h3 class="text-xl text-gray-900"><?php the_title(); ?></h3>
-                            <div>
-                                <?php the_category( ' | ' ); ?>
-                            </div>
-                            <div class="flex space-x-1 text-sm text-gray-500">
-                                <time datetime="2020-03-16">
-                                    <?php the_time( get_option( 'date_format' ) ); ?>
-                                </time>
-                                <span aria-hidden="true">
-		&middot; </span>
-                            </div>
-                            <div class="flex-1">
-                                <p class="mt-3 text-base text-gray-500"><?php echo get_the_excerpt(); ?></p>
-                            </div>
-                            <a href="<?php echo esc_url( get_permalink() ); ?>" class="btn text-center lg:mx-auto"><?php _e( 'Read More', 'ilovebeinganerd' ); ?></a>
-                        </div>
-                    </div>
-                    <div class="blog-shadow duration-700 ease-in-out flex flex-col overflow-hidden rounded-lg lg:hover:scale-105">
-                        <div class="flex-shrink-0">
-                            <?php echo PG_Image::getPostImage( null, 'post-thumbnail', array(
-                                	'class' => 'h-48 w-full object-cover',
-                                	'sizes' => 'max-width(480px) 90vw, max-width(768px) 512px, max-width(1024px) 52vw, max-width(1280px) 36vw, max-width(1536px) 25vw, 413px'
-                            ), 'both', null ) ?>
-                        </div>
-                        <div class="flex-1 p-6 flex flex-col justify-between">
-                            <h3 class="text-xl text-gray-900"><?php the_title(); ?></h3>
-                            <div>
-                                <?php the_category( ' | ' ); ?>
-                            </div>
-                            <div class="flex space-x-1 text-sm text-gray-500">
-                                <time datetime="2020-03-16">
-                                    <?php the_time( get_option( 'date_format' ) ); ?>
-                                </time>
-                                <span aria-hidden="true">
-		&middot; </span>
-                            </div>
-                            <div class="flex-1">
-                                <p class="mt-3 text-base text-gray-500"><?php echo get_the_excerpt(); ?></p>
-                            </div>
-                            <a href="<?php echo esc_url( get_permalink() ); ?>" class="btn text-center lg:mx-auto"><?php _e( 'Read More', 'ilovebeinganerd' ); ?></a>
-                        </div>
-                    </div>
-                    <div class="blog-shadow duration-700 ease-in-out flex flex-col overflow-hidden rounded-lg lg:hover:scale-105">
-                        <div class="flex-shrink-0">
-                            <?php echo PG_Image::getPostImage( null, 'post-thumbnail', array(
-                                	'class' => 'h-48 w-full object-cover',
-                                	'sizes' => 'max-width(480px) 90vw, max-width(768px) 512px, max-width(1024px) 52vw, max-width(1280px) 36vw, max-width(1536px) 25vw, 413px'
-                            ), 'both', null ) ?>
-                        </div>
-                        <div class="flex-1 p-6 flex flex-col justify-between">
-                            <h3 class="text-xl text-gray-900"><?php the_title(); ?></h3>
-                            <div>
-                                <?php the_category( ' | ' ); ?>
-                            </div>
-                            <div class="flex space-x-1 text-sm text-gray-500">
-                                <time datetime="2020-03-16">
-                                    <?php the_time( get_option( 'date_format' ) ); ?>
-                                </time>
-                                <span aria-hidden="true">
-		&middot; </span>
-                            </div>
-                            <div class="flex-1">
-                                <p class="mt-3 text-base text-gray-500"><?php echo get_the_excerpt(); ?></p>
-                            </div>
-                            <a href="<?php echo esc_url( get_permalink() ); ?>" class="btn text-center lg:mx-auto"><?php _e( 'Read More', 'ilovebeinganerd' ); ?></a>
-                        </div>
-                    </div>
-                    <div class="blog-shadow duration-700 ease-in-out flex flex-col overflow-hidden rounded-lg lg:hover:scale-105">
-                        <div class="flex-shrink-0">
-                            <?php echo PG_Image::getPostImage( null, 'post-thumbnail', array(
-                                	'class' => 'h-48 w-full object-cover',
-                                	'sizes' => 'max-width(480px) 90vw, max-width(768px) 512px, max-width(1024px) 52vw, max-width(1280px) 36vw, max-width(1536px) 25vw, 413px'
-                            ), 'both', null ) ?>
-                        </div>
-                        <div class="flex-1 p-6 flex flex-col justify-between">
-                            <h3 class="text-xl text-gray-900"><?php the_title(); ?></h3>
-                            <div>
-                                <?php the_category( ' | ' ); ?>
-                            </div>
-                            <div class="flex space-x-1 text-sm text-gray-500">
-                                <time datetime="2020-03-16">
-                                    <?php the_time( get_option( 'date_format' ) ); ?>
-                                </time>
-                                <span aria-hidden="true">
-		&middot; </span>
-                            </div>
-                            <div class="flex-1">
-                                <p class="mt-3 text-base text-gray-500"><?php echo get_the_excerpt(); ?></p>
-                            </div>
-                            <a href="<?php echo esc_url( get_permalink() ); ?>" class="btn text-center lg:mx-auto"><?php _e( 'Read More', 'ilovebeinganerd' ); ?></a>
-                        </div>
-                    </div>
-                    <div class="blog-shadow duration-700 ease-in-out flex flex-col overflow-hidden rounded-lg lg:hover:scale-105">
-                        <div class="flex-shrink-0">
-                            <?php echo PG_Image::getPostImage( null, 'post-thumbnail', array(
-                                	'class' => 'h-48 w-full object-cover',
-                                	'sizes' => 'max-width(480px) 90vw, max-width(768px) 512px, max-width(1024px) 52vw, max-width(1280px) 36vw, max-width(1536px) 25vw, 413px'
-                            ), 'both', null ) ?>
-                        </div>
-                        <div class="flex-1 p-6 flex flex-col justify-between">
-                            <h3 class="text-xl text-gray-900"><?php the_title(); ?></h3>
-                            <div>
-                                <?php the_category( ' | ' ); ?>
-                            </div>
-                            <div class="flex space-x-1 text-sm text-gray-500">
-                                <time datetime="2020-03-16">
-                                    <?php the_time( get_option( 'date_format' ) ); ?>
-                                </time>
-                                <span aria-hidden="true">
-		&middot; </span>
-                            </div>
-                            <div class="flex-1">
-                                <p class="mt-3 text-base text-gray-500"><?php echo get_the_excerpt(); ?></p>
-                            </div>
-                            <a href="<?php echo esc_url( get_permalink() ); ?>" class="btn text-center lg:mx-auto"><?php _e( 'Read More', 'ilovebeinganerd' ); ?></a>
-                        </div>
-                    </div>
                 </div>
             <?php else : ?>
                 <p><?php _e( 'Sorry, no posts matched your criteria.', 'ilovebeinganerd' ); ?></p>

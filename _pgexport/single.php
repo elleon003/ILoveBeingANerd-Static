@@ -9,7 +9,7 @@
                     </button>
                 </div>
                 <div id="menu" class="duration-700 ease-in-out pt-8 lg:flex lg:flex-col" hidden>
-                    <a href="" class="bg-black duration-300 ease-in font-bold hover:bg-yellow hover:no-underline hover:text-black mx-auto px-6 py-2 rounded-md text-lg text-white lg:w-1/2"><?php _e( 'Subscribe', 'ilovebeinganerd' ); ?></a>
+                    <a href="/subscribe" class="bg-black duration-300 ease-in font-bold hover:bg-yellow hover:no-underline hover:text-black mx-auto px-6 py-2 rounded-md text-lg text-white lg:w-1/2"><?php _e( 'Subscribe', 'ilovebeinganerd' ); ?></a>
                     <?php if ( has_nav_menu( 'primary' ) ) : ?>
                         <?php
                             PG_Smart_Walker_Nav_Menu::$options['template'] = '<a class="block border-grey duration-700 ease-in-out focus:underline hover:bg-yellow hover:font-semibold hover:text-black hover:text-bold py-5 text-2xl w-full lg:border-t-2 {CLASSES}" id="{ID}" {ATTRS}>{TITLE}</a>';
@@ -34,13 +34,15 @@
                     ), 'both', null ) ?>
                 </div>
                 <!-- start slipsum code -->
-                <div class="flex justify-start items-center text-base"> 
-                    <p class="mr-2 text-base font-medium"> <?php $terms = get_the_terms( get_the_ID(), 'category' ) ?><?php if( !empty( $terms ) ) : ?><?php foreach( $terms as $term ) : ?><a href="<?php echo esc_url( get_term_link( $term, 'category' ) ) ?>" class="hover:underline"><?php echo $term->name; ?></a><?php endforeach; ?><?php endif; ?> </p> 
+                <div class="flex items-center text-base"> 
+                    <div class="mr-4">
+                        <?php the_category( ' | ' ); ?>
+                    </div>                     
                     <time class="mr-2 italic" datetime="2020-03-16">
                         <?php the_time( get_option( 'date_format' ) ); ?>
                     </time>                                          
                 </div>
-                <div>
+                <div class="mb-16 mt-4">
                     <?php the_content(); ?>
                 </div>
                 <!-- end slipsum code -->

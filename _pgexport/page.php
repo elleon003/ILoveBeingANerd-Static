@@ -9,7 +9,7 @@
                     </button>
                 </div>
                 <div id="menu" class="duration-700 ease-in-out pt-8 lg:flex lg:flex-col" hidden>
-                    <a href="" class="bg-black duration-300 ease-in font-bold hover:bg-yellow hover:no-underline hover:text-black mx-auto px-6 py-2 rounded-md text-lg text-white lg:w-1/2"><?php _e( 'Subscribe', 'ilovebeinganerd' ); ?></a>
+                    <a href="/subscribe" class="bg-black duration-300 ease-in font-bold hover:bg-yellow hover:no-underline hover:text-black mx-auto px-6 py-2 rounded-md text-lg text-white lg:w-1/2"><?php _e( 'Subscribe', 'ilovebeinganerd' ); ?></a>
                     <?php if ( has_nav_menu( 'primary' ) ) : ?>
                         <?php
                             PG_Smart_Walker_Nav_Menu::$options['template'] = '<a class="block border-grey duration-700 ease-in-out focus:underline hover:bg-yellow hover:font-semibold hover:text-black hover:text-bold py-5 text-2xl w-full lg:border-t-2 {CLASSES}" id="{ID}" {ATTRS}>{TITLE}</a>';
@@ -34,10 +34,7 @@
                     ), 'both', null ) ?>
                 </div>
                 <!-- start slipsum code -->
-                <div class="flex justify-start items-center text-base"> 
-                    <p class="mr-2 text-base font-medium"> </p> 
-                </div>
-                <div>
+                <div class="my-8">
                     <?php the_content(); ?>
                 </div>
                 <!-- end slipsum code -->

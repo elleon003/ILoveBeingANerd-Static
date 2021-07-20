@@ -1,11 +1,13 @@
 @font-face {
   font-family: Augor;
+  font-display:swap;
   src: url('fonts/Augor-Regular.woff') format('woff'),
        url('fonts/Augor-Regular.woff2') format('woff2');
 }
 
 @font-face {
   font-family: PTSans;
+  font-display:swap;
   src: url('fonts/PTSans-Regular.woff') format('woff'),
        url('fonts/PTSans-Regular.woff2') format('woff2');
   font-style: normal;
@@ -13,6 +15,7 @@
 
 @font-face {
   font-family: PTSans;
+  font-display:swap;
   src: url('fonts/PTSans-Italic.woff') format('woff'),
        url('fonts/PTSans-Italic.woff2') format('woff2');
   font-style: italic;
@@ -20,6 +23,7 @@
 
 @font-face {
   font-family: PTSans;
+  font-display:swap;
   src: url('fonts/PTSans-BoldItalic.woff') format('woff'),
        url('fonts/PTSans-BoldItalic.woff2') format('woff2');
   font-style: italic;
@@ -28,6 +32,7 @@
 
 @font-face {
   font-family: PTSans;
+  font-display:swap;
   src: url('fonts/PTSans-Bold.woff') format('woff'),
        url('fonts/PTSans-Bold.woff2') format('woff2');
   font-weight:bold;
@@ -68,22 +73,20 @@
   p {
     @apply text-xl leading-snug my-4;
   }
-  main a {
-    @apply text-purple-light hover:font-bold;
+  main a,
+  li a {
+    @apply underline hover:text-purple-light hover:font-bold;
   }
 }
 
 @layer components {
   .btn {
-    @apply bg-yellow hover:bg-yellow-dark hover:underline focus:bg-yellow-dark font-bold px-6 py-2 rounded-md text-lg text-black transition duration-300 ease-in-out; 
+    @apply bg-yellow no-underline hover:bg-yellow-dark hover:underline focus:bg-yellow-dark font-bold px-6 py-2 rounded-md text-lg text-black hover:text-black transition duration-300 ease-in-out; 
   }
   .link {
     @apply text-purple-light hover:text-purple hover:underline focus:text-purple focus:underline;
   }
-  .active {
-    @apply bg-yellow font-semibold text-black;
-  }
-  .page {
-    max-width: 1080px;
+  .current-menu-item {
+    @apply bg-yellow font-semibold text-black !important;
   }
 }

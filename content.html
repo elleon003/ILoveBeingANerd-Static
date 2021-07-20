@@ -63,7 +63,7 @@
 					</button>
 				</div>
 				<div data-pg-name="Navbar" id="menu" class="duration-700 ease-in-out pt-8 lg:flex lg:flex-col" hidden>
-					<a href="" class="bg-black duration-300 ease-in font-bold hover:bg-yellow hover:no-underline hover:text-black mx-auto px-6 py-2 rounded-md text-lg text-white lg:w-1/2">Subscribe</a>
+					<a href="/subscribe" class="bg-black duration-300 ease-in font-bold hover:bg-yellow hover:no-underline hover:text-black mx-auto px-6 py-2 rounded-md text-lg text-white lg:w-1/2">Subscribe</a>
 					<div class="pt-8 lg:mt-8 lg:p-0" cms-menu-register-description="Main Menu" cms-menu-register cms-menu="primary">
 						<a href="" class="active block border-grey duration-700 ease-in-out focus:underline hover:bg-yellow hover:font-semibold hover:text-black hover:text-bold py-5 text-2xl w-full lg:border-t-2">Home</a>
 						<div id="categories">
@@ -95,12 +95,14 @@
 					<img src="http://pinegrow.com/placeholders/img17.jpg" class="mx-auto rounded-md w-full" cms-post-image="full" cms-post-image-sizes="max-width(1024px) 92vw, max-width(1280px) 45vw, max-width(1536px) 38vw, 549px"/>
 				</div>
 				<!-- start slipsum code -->
-				<div class="flex justify-start items-center text-base"> 
-					<p class="mr-2 text-base font-medium"> <a href="#" class="hover:underline" cms-tags="category" cms-tags-display="this">Article </a> </p> 
+				<div class="flex items-center text-base"> 
+					<div wp-the-category=" | " class="mr-4" wp-the-category-set="content">
+						<p class="mr-2 text-base font-medium"><a href="#" class="hover:underline" cms-tags="category" cms-tags-display="this">Article&nbsp; &nbsp;</a> </p>
+					</div>					 
 					<time class="mr-2 italic" datetime="2020-03-16" cms-post-date>Mar 16, 2020</time>					 
 					<p class='text-base' cms-no-export>6 min read </p> 
 				</div>
-				<div data-pg-name="Post Content" cms-post-content>
+				<div data-pg-name="Post Content" class="mb-16 mt-4" cms-post-content>
 					<p>Do you see any Teletubbies in here? Do you see a slender plastic tag clipped to my shirt with my name printed on it? Do you see a little Asian child with a blank expression on his face sitting outside on a mechanical helicopter that shakes when you put quarters in it? No? Well, that's what you see at a toy store. And you must think you're in a toy store, because you're here shopping for an infant named Jeb. </p>
 					<p></p>
 					<p>Your bones don&apos;t break, mine do. That&apos;s clear. Your cells react to bacteria and viruses differently than mine. You don&apos;t get sick, I do. That&apos;s also clear. But for some reason, you and I react the exact same way to water. We swallow it too fast, we choke. We get some in our lungs, we drown. However unreal it may seem, we are connected, you and I. We&apos;re on the same curve, just on <a href="#">opposite ends.</a></p>
